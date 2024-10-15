@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const multer = require('multer');
 const fs = require('fs');
+const { env } = require('process');
 const app = express();
 
 app.use(express.json()); // Middleware para procesar JSON en las solicitudes
@@ -29,7 +30,7 @@ const routeSchema = new mongoose.Schema({
 const Route = mongoose.model('Route', routeSchema);
 
 // Conectar a la base de datos MongoDB Atlas
-mongoose.connect("mongodb+srv://alfredo:notebok456@recluster.cbmnw.mongodb.net/Routes?retryWrites=true&w=majority&appName=REcluster")
+mongoose.connect(env.MONGO_URI)
     .then(() => {
         console.log('Conectado a la base de datos');
     })

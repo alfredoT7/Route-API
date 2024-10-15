@@ -30,7 +30,7 @@ const routeSchema = new mongoose.Schema({
 const Route = mongoose.model('Route', routeSchema);
 
 // Conectar a la base de datos MongoDB Atlas
-mongoose.connect(env.MONGO_URI)
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log('Conectado a la base de datos');
     })

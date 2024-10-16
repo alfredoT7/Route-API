@@ -30,7 +30,7 @@ const routeSchema = new mongoose.Schema({
 const Route = mongoose.model('Route', routeSchema);
 app.get('/', (req, res) => {
     res.send('Hello World!');
-}
+});
 
 
 

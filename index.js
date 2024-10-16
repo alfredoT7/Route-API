@@ -28,6 +28,11 @@ const routeSchema = new mongoose.Schema({
 });
 
 const Route = mongoose.model('Route', routeSchema);
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+}
+
+
 
 // Conectar a la base de datos MongoDB Atlas
 mongoose.connect("mongodb+srv://alfredo:notebok456@recluster.cbmnw.mongodb.net/Routes?retryWrites=true&w=majority&appName=REcluster")
